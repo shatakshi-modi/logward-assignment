@@ -8,9 +8,11 @@ const ReadComment = ({ comments, updateComments }) => {
 
   return (
     <div className="read-comment-container">
-      <div className="sort-container">
-        <Sort />
-      </div>
+      {comments.length > 0 && (
+        <div className="sort-container">
+          <Sort />
+        </div>
+      )}
       <div className="comments-container">
         {comments.sort(sortObj[sort]).map((comment) => (
           <Comment
